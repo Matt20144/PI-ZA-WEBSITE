@@ -2,7 +2,14 @@
 <html>
   <head>
     <title>Pi Za</title>
-    <link rel="icon" href="https://ccbba000-9724-4d20-a054-c5ea6f7a3221-00-20x1bktzozukh.riker.replit.dev/static/Pi_Za_logo_cropped.jpg" type="image/jpg">
+    <link rel="icon" href="https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Pi_Za_logo_cropped.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+
+
     <style>
       .navigation_bar {
         position:fixed;
@@ -59,7 +66,79 @@
       }
       body{
         margin:0;
+        background-color: #E5C8B4;
+        
       }
+      .container1{
+        display: flex;
+        justify-content: center; /* Centers the squares horizontally */
+        align-items: center; /* Centers the squares vertically */
+       margin-top: 100px;
+        
+      }
+      .container2{
+        display: flex;
+        justify-content: center; /* Centers the squares horizontally */
+        align-items:center;
+        margin-top: 30px;
+      }
+      .square {
+          width: 250px;
+          height: 250px;
+          background-color: #FFFFFF;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 20px;
+          color: black;
+          font-size: 16px;
+          font-weight: bold;
+          text-align:center;
+          /*font-family:"cairo", sens-serif;*/
+          font-family:'Caveat', cursive;
+          position : relative;
+          border: 5px solid #000000; 
+          transition: background-image 0.3s ease; /* Smooth transition */
+        background-size: cover; /* Ensure the image covers the square */
+        background-position: center; /* Center the image */
+          
+      }
+        
+        .square_title{
+          text-align:center;
+          font-family: 'Lobster', cursive;
+          top:0;
+          position: absolute;
+          margin-top:30px;
+          display: block;   
+      }
+
+      a {
+        text-decoration:none;
+        
+      }
+
+      a[href='/pies']:hover .square {
+        background-image: url("https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/food_img1.jpg"); /* pies hover image */
+        color: transparent; 
+      }
+
+      a[href="/rolls"]:hover .square{
+        background-image: url("https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Rolls.jpg");
+        color: transparent;;
+      }
+
+      a[href="/sweets"]:hover .square{
+        background-image: url("https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/cookies.jpg");
+        color:transparent;
+      }
+
+      a[href="/drinks"]:hover .square{
+        background-image: url("https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/drinks.jpg");
+        color:transparent;
+      }
+      
+      
     </style>
     
   </head>
@@ -71,12 +150,39 @@
         <li><a href="/order">Order Now</a></li>
         <li><a href="/menu">Our Menu</a></li>
         <li><a href="/">Home</a></li>
-        <li>><img src="https://ccbba000-9724-4d20-a054-c5ea6f7a3221-00-20x1bktzozukh.riker.replit.dev/static/Pi_Za_logo_cropped.jpg" alt="Pi Za logo"></li>
+        <li><img src="https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Pi_Za_logo_cropped.jpg" alt="Pi Za logo"></li>
       </ul>
     </nav>
 
     
-    <img src="https://ccbba000-9724-4d20-a054-c5ea6f7a3221-00-20x1bktzozukh.riker.replit.dev/static/menu_piza.jpg" alt="menu">
+
+    <div class="container1">
+    <a href="/pies">
+    <div class="square"> 
+      <div class="square_title">Pies </div> 
+      <br> Savor the authentic taste of the Middle East with our Lebanese pies—filled with savory meats, fresh vegetables, and aromatic spices. Perfect for a flavorful snack or light lunch!</div>
+    </a>
+    <a href="/rolls">  
+    <div class="square"> <div class="square_title">Rolls </div> Enjoy our delectable rolls, featuring fresh ingredients and harmonious flavors. Perfectly crafted for a delightful taste experience in every bite
+    </div> 
+    </a>
+    
+    </div>  
+
+    <div class="container2">
+      <a href="/sweets">
+      <div class="square"> <div class="square_title"> Sweets </div> Indulge in our irresistible sweets—freshly baked cookies and signature sweet pies. Each treat is a perfect blend of rich flavors and delightful textures, crafted to satisfy your sweetest cravings.
+      </div>
+      </a> 
+      <a href="/drinks">
+      <div class="square"> <div class="square_title"> Drinks </div> 
+      Quench your thirst with our diverse drink selection, including classic sodas like Coke, Pepsi, and Diet Pepsi, along with refreshing juices. Perfectly paired with any meal or enjoyed on their own! </div>
+      </a>
+    </div>
+
+    
+    
+    
   </body>
   
 </html>
