@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title> Pi Za  </title> 
     <link rel="icon" href="https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Pi_Za_logo_cropped.jpg" type="image/jpg">
@@ -12,16 +14,23 @@
       .container {
         display: flex;
         width: 100%;
-        justify-content : center;
+        justify-content : space-between;
         align-items: center;
+        flex-wrap: wrap;
+         
+        
 
       }
+      .container img:hover{
+        transform : scale(1.05);
+      }
+      
 
       html, body {
         margin: 0;
         padding:0;
-        padding-top:30px; /* make sure content isn't hidden under top bar*/
-        background-color: #E5C8B4;
+        padding-top:30px; /* make sure content isn't hidden under top bar*/ 
+        background-color: #E5C8B4; 
 
       }
       main{
@@ -29,17 +38,21 @@
       }
 
       h1 {
-        font-size: 40px;
+        font-size: 3vw;
         text-align: center;
         font-family: Inter;
         font-weight: lighter;
+        padding-top:80px;
 
       }
 
       .intro_imgs {
-        height: 320px;
+        border-radius: 15px; 
         width: calc(30%);
-        margin-left : 2px;
+        height: 320px;
+        margin-bottom: 10px;
+        padding: 10px;
+        
       }
 
       p {
@@ -50,7 +63,7 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        font-family: 'Georgia', serif; /* Different font for a classic look */
+        font-family: 'Inter', sans-serif;; /* Different font for a classic look */
       }
 
       p strong {
@@ -62,7 +75,7 @@
       }
 
 
-      .navigation_bar {
+      .navigation_bar {   /* it hides stuff under it if we use a small screen*/
         position:fixed;
         top: 0; /* Aligns it to the top of the viewport */
         width: 100%; /* Ensures the navigation bar spans the entire width of the viewport */
@@ -76,7 +89,6 @@
         padding : 0px;
         margin : 0px;
         overflow:hidden;
-
       }
 
       .navigation_bar li{
@@ -86,8 +98,13 @@
 
         display:flex;
         align-items: center;
+      }
 
-
+      .navigation_bar li img {
+        height: 50px;
+        width: auto;
+        margin-right: auto;
+        margin-left: 40px;
       }
 
       .navigation_bar li a{
@@ -96,10 +113,7 @@
         text-decoration: none;
         display: block;
         text-align: center;
-        padding: 15px 0;
-
-
-
+        padding: 15px;
       }
 
       .navigation_bar a:hover{
@@ -115,6 +129,50 @@
           width:70px;
 
       }
+      img {
+          max-width: 100%;
+          height: auto;
+      }
+      p span{
+        font-weight: bold;
+        
+      }
+      @media (max-width: 768px) {
+        .intro_imgs {
+          width: 100%;
+          margin: 10px 0;
+        }
+        
+
+        .navigation_bar li {
+          float: none;
+          text-align: center;
+          margin-right: 0;
+        }
+
+        .navigation_bar ul {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .navigation_bar li img {
+          margin-right: 0;
+          margin-left: 10px;
+        }
+
+        h1 {
+          font-size: 5vw; /* Adjust font size for smaller screens */
+          padding-top : 250px;
+        }
+
+        p {
+          font-size: 1em; /* Adjust paragraph font size for smaller screens */
+        }
+      }
+      
+
+      
+
 
 
 
@@ -152,9 +210,9 @@
 
     <!-- the image will be added to the top         bar(top bar will have couple options like     contact us etc..) on top of the page as        the logo -->
     <main>
-    <p style="text-align: start;"> 
+    <p style="text-align: center;"> 
 
-      We are a family-owned restaurant dedicated to bringing you delicious and freshly prepared meals every day.<br>
+      We are a <span>family-owned restaurant</span> dedicated to bringing you delicious and freshly prepared meals every day.<br>
       As a new addition to the local dining scene, we are excited to offer a variety of options to satisfy every palate, from hearty meat dishes to flavorful vegetarian choices.<br>
 
       Our passion for quality and taste is reflected in our commitment to making fresh food daily. <br>
@@ -172,14 +230,7 @@
 
 
       </main>
-    <p>1- add server and domain, plus this should be displayed in diff screen sizes like computer, phone
-    , <br>then after a break:
-      <br> also add more stuff(imgs) to order now page
-      
-      <br> add a little reload icon so it displays when user reloads the page
-      <br> add a little food gallery to the end of this page 
-     
-     </p>
+    
 
 
 
