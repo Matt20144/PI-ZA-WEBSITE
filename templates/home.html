@@ -42,7 +42,7 @@
         text-align: center;
         font-family: Inter;
         font-weight: lighter;
-        padding-top:80px;
+        padding-top:50px;
 
       }
 
@@ -76,11 +76,15 @@
 
 
       .navigation_bar {   /* it hides stuff under it if we use a small screen*/
-        position:fixed;
-        top: 0; /* Aligns it to the top of the viewport */
-        width: 100%; /* Ensures the navigation bar spans the entire width of the viewport */
-        z-index: 1000; /* Ensures the navigation bar stays on top of other elements */
-        background-color: hsl(0, 0%, 10%);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        z-index: 1000;
       }
 
       .navigation_bar ul{
@@ -102,9 +106,9 @@
 
       .navigation_bar li img {
         height: 50px;
-        width: auto;
-        margin-right: auto;
-        margin-left: 40px;
+        /*width: auto;*/
+        
+        margin-left: 80px;
       }
 
       .navigation_bar li a{
@@ -125,7 +129,6 @@
           margin-right: 500px;
           height : 50px;
           padding: 0px;
-
           width:70px;
 
       }
@@ -144,22 +147,26 @@
         }
         
 
-        .navigation_bar li {
-          float: none;
-          text-align: center;
-          margin-right: 0;
+        .navigation_bar {
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px 20px;
+          width: 100%; /* Ensures the navigation bar spans the entire width of the viewport */
+          z-index: 1000; /* Ensures the navigation bar stays on top of other elements */
         }
 
         .navigation_bar ul {
           flex-direction: column;
-          align-items: flex-start;
+          width: 100%;
+          
         }
 
-        .navigation_bar li img {
-          margin-right: 0;
-          margin-left: 10px;
+        .navigation_bar li {
+          margin: 10px 0; /* Spacing between items */
         }
+        
 
+        
         h1 {
           font-size: 5vw; /* Adjust font size for smaller screens */
           padding-top : 250px;
