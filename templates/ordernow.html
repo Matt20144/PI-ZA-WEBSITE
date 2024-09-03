@@ -3,7 +3,7 @@
   <head>
 
   <title>Pi Za</title>
-  <link rel="icon" href="https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Pi_Za_logo_cropped.jpg" type="image/jpg">  
+  <link rel="icon" href="https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" type="image/jpg">  
     <style>
       body{
         text-align: center;
@@ -67,12 +67,55 @@
       }
 
       .navigation_bar li img {
-          margin-right: 500px;
-          height : 50px;
+          
+          height : 60px;
           padding: 0px;
 
           width:70px;
 
+      }
+      .menu_toggle{
+        display:none;
+      }
+      @media (max-width: 768px){
+
+        .nav_links{
+          display:none;
+        }
+        
+        .navigation_bar li a{
+          display:none;
+        }
+        .menu_toggle {
+          display: block;
+          font-size: 24px;
+          color: #fff;
+          cursor: pointer;
+          padding: 15px;
+          margin-right: 20px;
+          float: right;
+        }
+        
+        .nav_links.active{
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          top: 70px;
+          right: 0;
+          background-color: #1a1a1a;
+          width: 100%;
+          text-align: center;
+          padding: 20px 0;
+        }
+        .nav_links a {
+          padding: 10px 0;
+          font-size: 18px;
+        }
+
+        
+        
+
+        
       }
 
     </style>
@@ -82,14 +125,17 @@
   <body>
     <nav class = "navigation_bar">
 
+       <div class="menu_toggle" onclick="toggleMenu()">&#9776;</div>
+
       <ul>
 
-
+        <div class="nav_links">
         <li><a href ="/contact">Contact us</a></li>
         <li><a href = "/order">Order Now</a></li>
         <li><a href = "/menu">Our Menu</a></li>
         <li><a href = "/">Home</a></li>
-        <li><img src = "https://0800672a-16b4-457b-9302-c53dd370230f-00-3chvo1hdgqscy.picard.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo"></li>
+        </div>
+        <li><img src = "https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo"></li>
 
 
 
@@ -103,6 +149,13 @@
     
 
     </a>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav_links');
+        navLinks.classList.toggle('active');
+      }
+    </script>
   </body>
 
 
