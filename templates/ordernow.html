@@ -83,13 +83,12 @@
       }
       @media (max-width: 768px){
 
-        .nav_links{
+        
+        .navigation_bar li{
           display:none;
         }
         
-        .navigation_bar li a{
-          display:none;
-        }
+        
         .menu_toggle {
           display: block;
           font-size: 24px;
@@ -99,22 +98,42 @@
           margin-right: 20px;
           float: right;
         }
+
         
+
         .nav_links.active{
-          display: flex;
+          display:flex;
           flex-direction: column;
-          position: absolute;
-          top: 70px;
-          right: 0;
-          background-color: #1a1a1a;
+          position:absolute;
+          top:70px;
+          background-color: hsl(0, 0%, 15%);
           width: 100%;
           text-align: center;
-          padding: 20px 0;
+          padding-top: 30px;
+          padding-bottom: 30px;
         }
-        .nav_links a {
-          padding: 10px 0;
-          font-size: 18px;
+
+        .nav_links.active li {
+          
+          
+          display: block;
+          width: 100%;
+          text-align: center;
+           margin-bottom: 10px;
+           
         }
+
+        .nav_links li a {
+          
+          width: 100%;
+          
+          
+        }
+        
+
+        
+        
+        
 
         
         
@@ -129,9 +148,10 @@
   <body>
     <nav class = "navigation_bar">
 
-       <div class="menu_toggle" onclick="toggleMenu()">&#9776;</div>
+       
 
       <ul>
+        <div class="menu_toggle" onclick="toggleMenu()">&#9776;</div>
 
         <div class="nav_links">
         <li><a href ="/contact">Contact us</a></li>
