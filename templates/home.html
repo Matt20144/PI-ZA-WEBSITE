@@ -17,20 +17,17 @@
         justify-content : space-between;
         align-items: center;
         flex-wrap: wrap;
-         
-        
-
       }
       .container img:hover{
         transform : scale(1.05);
       }
       
 
-      html, body {
+      body {
         margin: 0;
-        padding:0;
-        padding-top:30px; /* make sure content isn't hidden under top bar*/ 
+        padding-top:45px; /* make sure content isn't hidden under top bar*/ 
         background-color: #E5C8B4; 
+        text-align:center;
 
       }
       main{
@@ -38,7 +35,7 @@
       }
 
       h1 {
-        font-size: 3vw;
+        font-size: 30px;
         text-align: center;
         font-family: Inter;
         font-weight: lighter;
@@ -79,11 +76,7 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background-color: #1a1a1a;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        
+        background-color: hsl(0, 0%, 10%);
         z-index: 1000;
       }
 
@@ -99,18 +92,11 @@
         float : right;
         margin-right : 80px;
         vertical-align: middle;
-
         display:flex;
         align-items: center;
       }
 
-      .navigation_bar li img {
-        height: 50px;
-        width: 70px;
-        padding:0;
-        
-        margin-left: 30px;
-      }
+      
 
       .navigation_bar li a{
         vertical-align: middle;
@@ -118,7 +104,7 @@
         text-decoration: none;
         display: block;
         text-align: center;
-        padding: 15px;
+        padding: 15px 0;
       }
 
       .navigation_bar a:hover{
@@ -126,80 +112,78 @@
         color : red;
       }
 
-      .navigation_bar li img {
-          margin-right: 500px;
-          height : 50px;
+      .navigation_bar img {
+          margin-right:50px;
+          height : 60px;
           padding: 0px;
           width:70px;
+          vertical-align: middle; /* Aligns the image vertically in the middle */
+          display: inline-block; /* Ensures that the image behaves as an inline element */
+          
 
       }
-      img {
-          max-width: 100%;
-          height: auto;
+      .menu_toggle{
+        display:none;
       }
+      
       p span{
         font-weight: bold;
         
       }
-      .hamburger {
-          display: none;
-          font-size: 30px;
-          background: none;
-          border: none;
-          color: white;
-          cursor: pointer;
-      }
-      @media (max-width: 768px) {
-        .hamburger {
-            display: block;
-            position: absolute;
-            top: 15px;
-            right: 50px;
-        }
-
-        .intro_imgs {
-          width: 100%;
-          margin: 10px 0;
-        }
-        
-
-        .navigation_bar {
-          flex-direction: column;
-          align-items: flex-start;
-          padding: 10px 20px;
-          
-        }
-        
-
-        .navigation_bar ul {
+      @media (max-width: 768px){
+        .navigation_bar li{
           display:none;
-          flex-direction: column;
+        }
+
+
+        .menu_toggle {
+          display: block;
+          font-size: 24px;
+          color: #fff;
+          cursor: pointer;
+          padding: 15px;
+          margin-right: 20px;
+          float: right;
+        }
+        .nav_links.active{
+          display:flex;
+          flex-direction: column-reverse;
+          position:absolute;
+          top:70px;
+          background-color: hsl(0, 0%, 15%);
           width: 100%;
-          padding-left:0;
-          
-        }
-        .navigation_bar ul.show {
-            display: flex; /* Show the navigation menu when toggled */
+          text-align: center;
+          padding-top: 30px;
+          padding-bottom: 30px;
         }
 
-        .navigation_bar li {
-          margin: 10px 0; /* Spacing between items */
-        }
-        .navigation_bar li img{
-          margin-left: 20px; /* Keeps logo to the left */
-        }
-        
+        .nav_links.active li {
 
-        
-        h1 {
-          font-size: 5vw; /* Adjust font size for smaller screens */
-          padding-top : 250px;
+
+          display: block;
+          width: 100%;
+          text-align: center;
+           margin-bottom: 10px;
+
         }
 
-        p {
-          font-size: 1em; /* Adjust paragraph font size for smaller screens */
+        .nav_links li a {
+
+          width: 100%;
+
+
+        }
+
+        .container{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .container img{
+          width: 70%;
         }
       }
+      
       
 
       
@@ -219,15 +203,19 @@
     <nav class = "navigation_bar">
 
       <ul>
+        <div class="menu_toggle" onclick="toggleMenu()">&#9776;</div>
 
-
+        <div class="nav_links">
         <li><a href ="/contact">Contact us</a></li>
         <li><a href = "/order">Order Now</a></li>
         <li><a href = "/menu">Our Menu</a></li>
         <li><a href = "/">Home</a></li>
-        <li><img src = "https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo"></li>
-      </ul>  
-       <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+        </div>
+        <img src = "https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo">
+
+
+
+      </ul> 
 
     </nav>  
 
@@ -266,5 +254,11 @@
 
 
 
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav_links');
+        navLinks.classList.toggle('active');
+      }
+    </script>
   </body>  
   </html>

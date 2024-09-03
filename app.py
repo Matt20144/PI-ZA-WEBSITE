@@ -4,7 +4,7 @@ app = Flask(__name__)
 #print("hello, world")
 @app.route("/")  # this means whenever root gets called then print hello_world
 def home():
-  return render_template('ordernow.html')
+  return render_template('home.html')
 
 @app.route("/contact")
 def contact():
