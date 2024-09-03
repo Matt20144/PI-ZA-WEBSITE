@@ -53,16 +53,24 @@
         color : red;
       }
 
-      .navigation_bar li img {
-          margin-right: 500px;
-          height : 50px;
-          width:70px;
-
+      .navigation_bar img {
+        
+        margin-right: 50px;
+        height : 60px;
+        width:70px;
+        padding:0;
+        vertical-align: middle; /* Aligns the image vertically in the middle */
+        display: inline-block; /* Ensures that the image behaves as an inline element */
+      }
+      .menu_toggle{
+        display:none;
       }
       body{
         margin: 0;
         padding: 0;
         background-color: #E5C8B4;
+        text-align:center;
+        padding-top:50px;
       }
       h1{
 
@@ -120,6 +128,53 @@
         font-weight: bold;
         color: #A3CB38;
       }
+      @media (max-width: 768px){
+
+
+        .navigation_bar li{
+          display:none;
+        }
+
+
+        .menu_toggle {
+          display: block;
+          font-size: 24px;
+          color: #fff;
+          cursor: pointer;
+          padding: 15px;
+          margin-right: 20px;
+          float: right;
+        }
+        .nav_links.active{
+          display:flex;
+          flex-direction: column-reverse;
+          position:absolute;
+          top:70px;
+          background-color: hsl(0, 0%, 15%);
+          width: 100%;
+          text-align: center;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+
+        .nav_links.active li {
+
+
+          display: block;
+          width: 100%;
+          text-align: center;
+           margin-bottom: 10px;
+
+        }
+
+        .nav_links li a {
+
+          width: 100%;
+
+
+        }
+
+      }
       
 
 
@@ -128,14 +183,20 @@
     <div class="navigation_bar">
 
       <ul>
+        <div class="menu_toggle" onclick="toggleMenu()">&#9776;</div>
 
-
+        <div class="nav_links">
         <li><a href ="/contact">Contact us</a></li>
         <li><a href = "/order">Order Now</a></li>
         <li><a href = "/menu">Our Menu</a></li>
         <li><a href = "/">Home</a></li>
-        <li><img src = "https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo"></li>
-      </ul> 
+        </div>
+        <img src = "https://e6ed3fb3-4a00-402b-8c65-87babae574b5-00-oqy1d4v4tt68.worf.replit.dev/static/Pi_Za_logo_cropped.jpg" alt = "Pi Za logo">
+
+
+
+      </ul>  
+      
     </div>
 
     <h1>Note: Items highlighted in <span>green</span> are suitable for <span>vegetarians</span></h1>
@@ -154,6 +215,12 @@
     </div>
 
 
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav_links');
+        navLinks.classList.toggle('active');
+      }
+    </script>
   </body>
 
 
